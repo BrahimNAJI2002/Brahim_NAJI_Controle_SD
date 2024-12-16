@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {AuthGuard} from "./guards/auth.guard";
-import {ProductComponent} from "./ui/product/product.component";
+import {KeynoteComponent} from "./ui/keynote/keynote.component";
+import {ConferenceComponent} from "./ui/conference/conference.component";
 
 const routes: Routes = [
-  {path : "products", component : ProductComponent, canActivate : [AuthGuard], data : {roles :['ADMIN']}},
+  {path : "keynotes", component : KeynoteComponent, canActivate : [AuthGuard], data : {roles :['ADMIN']}},
+  {path : "conferences", component : ConferenceComponent, canActivate : [AuthGuard], data : {roles :['ADMIN']}},
 ];
 
 @NgModule({

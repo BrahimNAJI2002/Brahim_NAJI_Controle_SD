@@ -5,15 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {KeycloakAngularModule, KeycloakService} from "keycloak-angular";
 import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
-import { ProductComponent } from './ui/product/product.component';
+import { KeynoteComponent } from './ui/keynote/keynote.component';
+import { ConferenceComponent } from './ui/conference/conference.component';
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
     keycloak.init({
       config: {
         url: 'http://localhost:8080',
-        realm: 'bdcc-realm',
-        clientId: 'ecom-client-ang'
+        realm: 'brahim-realm',
+        clientId: 'brahim_cleint'
       },
       initOptions: {
         onLoad: 'check-sso',
@@ -24,7 +25,8 @@ function initializeKeycloak(keycloak: KeycloakService) {
 }
 @NgModule({ declarations: [
         AppComponent,
-        ProductComponent
+        KeynoteComponent,
+        ConferenceComponent
     ],
     bootstrap: [AppComponent], imports: [BrowserModule,
         AppRoutingModule, KeycloakAngularModule], providers: [
